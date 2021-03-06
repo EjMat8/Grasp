@@ -1,0 +1,106 @@
+//HEADLINE
+.headline {
+  text-align: right;
+  //   display: inline-block;
+  width: 40vw;
+  &__caption {
+    margin: 2rem 0;
+    color: $color-light-1;
+    font-weight: 600;
+    font-size: 1.9rem;
+  }
+}
+
+//BTN
+
+.btn {
+  padding: 1.5rem 3rem;
+
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1.7rem;
+  cursor: pointer;
+
+  &--fill {
+    background-color: $color-primary;
+    color: $color-light-1;
+    border: 1px solid $color-light-1;
+  }
+  &--default {
+    background-color: $color-light-1;
+    color: $color-primary;
+    border: 1px solid $color-light-1;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:not(:last-of-type) {
+    margin-right: 1rem;
+  }
+}
+
+//Nav
+.nav {
+  background-color: $color-dark-3;
+  box-shadow: 0 1rem 3rem rgba(#000, 0.2);
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+  &__item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    padding: 0 2rem;
+    &:last-child {
+      margin-right: 2rem;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: $color-light-1;
+  }
+}
+
+//LOGO
+.logo {
+  font-family: $font-logo;
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: $color-light-1;
+  margin-left: 2.5rem;
+}
+
+//feature
+.feature {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  gap: 6rem;
+  align-items: start;
+  &__box {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    row-gap: 2.5rem;
+    column-gap: 1.5rem;
+  }
+
+  &__icon {
+    fill: $color-primary;
+    width: 6rem;
+    height: 6rem;
+    grid-row: 1/3;
+    transform: translateY(-1rem);
+  }
+  &__desc {
+    font-size: 1.5rem;
+    color: #494437;
+  }
+}

@@ -1,0 +1,50 @@
+.nav {
+  grid-column: full-start/full-end;
+}
+
+.header {
+  background-image: linear-gradient(
+      105deg,
+      transparent 0%,
+      transparent 56%,
+      rgba($color-primary, 0.99) 56%
+    ),
+    url(../img/back.jpg);
+  background-position: top;
+  background-size: cover;
+  grid-column: full-start/full-end;
+  padding: 4rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.section-feature {
+  grid-column: center-start/center-end;
+  margin: 12.5rem 0;
+  display: grid;
+  row-gap: 7.5rem;
+
+  .heading-2 {
+    justify-self: center;
+  }
+}
+
+.section-picture {
+  background-color: darkmagenta;
+  grid-column: full-start/col-end 4;
+}
+.section-description {
+  background-color: aquamarine;
+  grid-column: col-start 5 / full-end;
+}
+
+.section-testimonials {
+  background-color: blueviolet;
+  grid-column: center-start/center-end;
+}
+
+.footer {
+  background-color: crimson;
+  grid-column: full-start/full-end;
+}

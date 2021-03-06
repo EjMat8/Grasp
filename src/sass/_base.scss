@@ -1,0 +1,55 @@
+$color-primary: #f9bc19;
+$color-secondary: #466bcc;
+$color-tertiary: #19f9bc;
+$color-quarternary: #f91956;
+
+$color-dark-1: #261c01;
+$color-dark-2: #130e00;
+$color-dark-3: #262c3f;
+$color-dark-4: #392a01;
+
+$color-light-1: #fffffe;
+$color-light-2: #fef4d8;
+
+$font-primary: "Raleway", sans-serif;
+$font-logo: "Indie Flower", cursive;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-dark-1;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: $color-light-1;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 7rem calc(90vh - 7rem) min-content 45vw repeat(
+      2,
+      min-content
+    );
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+//UTIL
+.ut-tCenter {
+  text-align: center;
+}
