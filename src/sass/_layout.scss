@@ -31,20 +31,35 @@
 }
 
 .section-picture {
-  background-color: darkmagenta;
+  background-color: $color-light-2;
   grid-column: full-start/col-end 4;
+
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 .section-description {
-  background-color: aquamarine;
+  background-color: $color-light-2;
   grid-column: col-start 5 / full-end;
+  padding: 6rem 7vw 6rem 3vw;
+  display: grid;
+  row-gap: 2.5rem;
+  justify-items: start;
+  align-items: start;
+  align-content: center;
 }
 
 .section-testimonials {
-  background-color: blueviolet;
+  margin: 15rem 0;
   grid-column: center-start/center-end;
+  display: grid;
+  row-gap: 7.5rem;
+  .heading-2 {
+    justify-self: center;
+  }
 }
 
 .footer {
-  background-color: crimson;
+  background-color: $color-dark-3;
   grid-column: full-start/full-end;
 }
