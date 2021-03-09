@@ -3,6 +3,8 @@
   text-align: right;
   //   display: inline-block;
   width: 40vw;
+  animation: moveUp 0.7s ease-out;
+  animation-fill-mode: backwards;
   &__caption {
     margin: 2rem 0;
     color: $color-light-1;
@@ -20,7 +22,7 @@
   font-weight: 600;
   font-size: 1.7rem;
   cursor: pointer;
-
+  transition: all 0.3s;
   &--fill {
     background-color: $color-primary;
     color: $color-light-1;
@@ -36,6 +38,11 @@
   }
   &:not(:last-of-type) {
     margin-right: 1rem;
+  }
+  &:hover {
+    filter: contrast(110%);
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 2rem rgba(#000, 0.1);
   }
 }
 
@@ -67,6 +74,13 @@
   &__link {
     text-decoration: none;
     color: $color-light-1;
+    display: inline-block;
+    transition: all 0.2s;
+
+    &:hover {
+      color: $color-primary;
+      transform: scale(1.1);
+    }
   }
 }
 
@@ -77,6 +91,7 @@
   font-size: 4rem;
   color: $color-light-1;
   margin-left: 2.5rem;
+  cursor: default;
 }
 
 //feature
@@ -158,7 +173,7 @@
 .review {
   // background-color: aquamarine;
   display: grid;
-  row-gap: 2rem;
+  row-gap: 3rem;
   width: 70%;
   margin: 0 auto;
 
@@ -222,5 +237,85 @@
     &:not(:last-child) {
       margin-right: 1rem;
     }
+  }
+}
+
+//footer
+.footer {
+  display: grid;
+  row-gap: 4rem;
+  padding: 8rem;
+  // justify-items: center;
+  &__info {
+    padding: 1rem;
+    list-style: none;
+    display: grid;
+    row-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    justify-items: center;
+    // background-color: red;
+  }
+  &__item {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+  &__link {
+    color: $color-grey-2;
+    text-decoration: none;
+    transition: all 0.2s;
+    &:hover {
+      color: $color-secondary;
+    }
+  }
+
+  &__social {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(2vw, 10rem));
+    justify-items: center;
+    justify-content: center;
+  }
+
+  &__icon-box {
+    // background-color: red;s
+    width: 6.5rem;
+    height: 6.5rem;
+    position: relative;
+    border-radius: 50%;
+    transform: scale(0.9);
+    overflow: hidden;
+    transition: all 0.4s;
+    &:hover {
+      transform: scale(1);
+      border-radius: 10%;
+
+      & .footer__icon {
+        &--fb {
+          fill: #3b5999;
+        }
+        &--tw {
+          fill: #55acee;
+        }
+        &--gp {
+          fill: #dd4b39;
+        }
+      }
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+    height: 8rem;
+    overflow: hidden;
+    fill: rgb(99, 99, 99);
+    cursor: pointer;
+    transition: all 0.4s;
+  }
+  &__copy {
+    justify-self: center;
+    color: rgb(99, 99, 99);
+    font-size: 1.5rem;
   }
 }
