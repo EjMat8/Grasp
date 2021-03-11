@@ -3,7 +3,7 @@
   text-align: right;
   //   display: inline-block;
   width: 40vw;
-  animation: moveUp 0.7s ease-out;
+  animation: moveLeft 0.9s ease-out;
   animation-fill-mode: backwards;
   &__caption {
     margin: 2rem 0;
@@ -11,6 +11,7 @@
     font-weight: 600;
     font-size: 1.9rem;
   }
+  backface-visibility: hidden;
 }
 
 //BTN
@@ -60,6 +61,7 @@
     display: flex;
     height: 100%;
     align-items: center;
+    animation: moveLeft 0.9s ease-out;
   }
   &__item {
     height: 100%;
@@ -150,14 +152,21 @@
     font-weight: 700;
     background-color: $color-grey-1;
     border-radius: 50%;
+    transition: transform 0.2s;
     cursor: pointer;
     &--left {
       left: 3%;
       transform: translate(-50%, -50%);
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
     }
     &--right {
       right: 3%;
       transform: translate(50%, -50%);
+      &:hover {
+        transform: translate(50%, -50%) scale(1.1);
+      }
     }
   }
 }
