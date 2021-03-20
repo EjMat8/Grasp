@@ -12,8 +12,7 @@
     "compress:css": "node-sass src/css/style.prefix.css src/css/style.css --output-style compressed",
     "build:css": "npm-run-all compile:sass prefix:css compress:css",
     "start:parcel": "parcel index.html",
-    "build:parcel": "parcel build index.html --dist-dir ./dist",
-    "build": "npm-run-all build:css build:parcel"
+    "build:parcel": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
