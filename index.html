@@ -10,11 +10,15 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/css/style.css" />
+    <script defer src="src/js/script.js"></script>
     <title>Grasp</title>
   </head>
-  <body class="container">
+  <body>
     <nav class="nav">
+      <input type="checkbox" class="nav__checkbox" id="nav-toggle">
+      <label for="nav-toggle" class="nav__button"><span class="burger-line">&nbsp;</span></label>
       <span class="logo">GRASP</span>
+      
       <ul class="nav__list">
         <li class="nav__item"><a href="#" class="nav__link">About us</a></li>
         <li class="nav__item"><a href="#" class="nav__link">Pricing</a></li>
@@ -26,7 +30,12 @@
           <a href="#" class="nav__link">Lesson Tree</a>
         </li>
       </ul>
+    
+      
+     
     </nav>
+    <div class="container">
+
     <header class="header">
       <div class="headline">
         <h1 class="heading-1">
@@ -99,6 +108,7 @@
       <img src="src/img/students.png" alt="students" class="student__img" />
     </section>
     <section class="section-description">
+      
       <h3 class="heading-3">Bringing out the best in you</h3>
       <p class="student__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium blanditiis dolorem saepe assumenda nesciunt corrupti sunt exercitationem mollitia, voluptatem impedit asperiores atque, quam, possimus alias fugit totam rerum aliquid quo!Lorem ipsum dolor sit amet coonsetur laudantium.</p>
       <button class="btn btn--fill">Enroll now</button>
@@ -111,7 +121,7 @@
         <div class="slide">
           <figure class="review">
 
-            <blockquote class="review__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia soluta inventore incidunt blanditiis, quibusdam magni nostrum fugiat, impedit veniam eligendi quasi ipsum architecto ratione dolorem tenetur suscipit porro officiis voluptas.</blockquote>
+            <blockquote class="review__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia soluta inventore incidunt blanditiis, quibusdam magni nostrum fugiat, impedit veniam eligendi quasi ipsum architecto ratione dolorem tenetur suscipit porro offic.</blockquote>
             <figcaption class="review__user">
               <img src="src/img/user-1.jpg" alt="user-1" class="review__img">
               <p class="review__username">James Switch</p>
@@ -141,11 +151,11 @@
         <button class="slider__btn slider__btn--left">&lt;</button>
         <button class="slider__btn slider__btn--right">&gt;</button>
 
-        <div class="dots">
-          <button class="dots__dot dots__dot--active">&nbsp;</button>
-          <button class="dots__dot">&nbsp;</button>
-          <button class="dots__dot">&nbsp;</button>
-        </div>
+      </div>
+      <div class="dots">
+        <!-- <button class="dots__dot dots__dot--active">&nbsp;</button>
+        <button class="dots__dot">&nbsp;</button>
+        <button class="dots__dot">&nbsp;</button> -->
       </div>
     </section>
     <footer class="footer">
@@ -177,5 +187,6 @@
         </div>
       </div>
       <p class="footer__copy">&copy; <span class="footer__logo">GRASP</span>. Connect to learn. All Rights Reserved</p>
+    </div>
   </body>
 </html>

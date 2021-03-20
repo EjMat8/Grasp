@@ -12,6 +12,17 @@
     font-size: 1.9rem;
   }
   backface-visibility: hidden;
+  @media only screen and (max-width: $breakpoint-2) {
+    text-align: left;
+    animation: moveRight 0.9s ease-out;
+
+    // margin-left: 1.5rem;
+  }
+  @media only screen and (max-width: $breakpoint-3) {
+    text-align: center;
+    animation: moveRight 0.9s ease-out;
+    width: 80vw;
+  }
 }
 
 //BTN
@@ -47,8 +58,47 @@
   }
 }
 
+.burger-line {
+  display: inline-block;
+  width: 3.5rem;
+  height: 2px;
+  background-color: $color-light-1;
+  position: relative;
+  transition: opacity 0.2s;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 3.5rem;
+    height: 2px;
+    background-color: $color-light-1;
+    position: absolute;
+    left: 0;
+    transition: transform 0.2s;
+  }
+  &::before {
+    top: -1rem;
+  }
+  &::after {
+    top: 1rem;
+  }
+}
+.nav__checkbox:checked + .nav__button .burger-line {
+  background-color: transparent;
+}
+.nav__checkbox:checked + .nav__button .burger-line::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.nav__checkbox:checked + .nav__button .burger-line::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
 //Nav
 .nav {
+  // overflow: hidden;
   background-color: $color-dark-3;
   box-shadow: 0 1rem 3rem rgba(#000, 0.2);
   position: relative;
@@ -56,12 +106,58 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    height: 6rem;
+    width: 6rem;
+    @include respond(phone) {
+      display: flex;
+    }
+  }
   &__list {
+    overflow: hidden;
     list-style: none;
     display: flex;
+    width: auto;
     height: 100%;
     align-items: center;
     animation: moveLeft 0.9s ease-out;
+    transition: opacity 0.2s;
+    @include respond(phone) {
+      position: absolute;
+      flex-direction: column;
+      padding: 2rem 0;
+      top: 100%;
+      right: 0;
+      // height: auto;
+      align-items: flex-start;
+      background-color: $color-dark-3;
+      height: 0;
+      width: 0;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  &__checkbox:checked ~ &__list {
+    height: auto;
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  &--fixed {
+    display: block;
+    position: fixed;
+    // width: 100%;
   }
   &__item {
     height: 100%;
@@ -127,6 +223,13 @@
     grid-column: 1/-2;
     height: 105%;
     transform: translateY(-1.7vw);
+    @media only screen and(max-width:$breakpoint-2) {
+      grid-row: auto;
+      grid-column: auto;
+      height: auto;
+      width: 70%;
+      transform: translateY(0) translateX(-1rem);
+    }
   }
 
   &__text {
@@ -138,8 +241,19 @@
 
 .slider {
   position: relative;
+
   width: 100%;
-  height: 20vw;
+  height: 25vw;
+  padding: 5rem 0;
+  overflow: hidden;
+  @media only screen and (max-width: $breakpoint-1) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    column-gap: 2rem;
+    row-gap: 10rem;
+    height: 100%;
+    align-content: stretch;
+  }
   // background-color: palegoldenrod;
   &__btn {
     position: absolute;
@@ -153,7 +267,11 @@
     background-color: $color-grey-1;
     border-radius: 50%;
     transition: transform 0.2s;
+    outline: none;
     cursor: pointer;
+    @media only screen and (max-width: $breakpoint-1) {
+      display: none;
+    }
     &--left {
       left: 3%;
       transform: translate(-50%, -50%);
@@ -173,9 +291,14 @@
 
 .slide {
   position: absolute;
-  top: 0;
+
   width: 100%;
   height: 100%;
+  transition: transform 0.7s;
+  @media only screen and (max-width: $breakpoint-1) {
+    height: auto;
+    position: static;
+  }
 }
 
 //reviews
@@ -202,6 +325,7 @@
     }
   }
   &__user {
+    align-self: end;
     display: grid;
     justify-content: center;
     justify-items: center;
@@ -231,13 +355,19 @@
   align-items: center;
   margin-top: 2rem;
   z-index: 10;
-
+  @media only screen and (max-width: $custom-breakpoint) {
+    bottom: -5%;
+  }
+  @media only screen and (max-width: $breakpoint-1) {
+    display: none;
+  }
   &__dot {
     border: none;
     background-color: $color-grey-2;
     height: 0.7rem;
     width: 0.7rem;
     border-radius: 50%;
+    outline: none;
     cursor: pointer;
 
     &--active {
