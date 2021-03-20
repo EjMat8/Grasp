@@ -74,7 +74,10 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: calc(90vh - 7rem) min-content 35vw repeat(2, min-content);
+  grid-template-rows: 7rem calc(90vh - 7rem) min-content 35vw repeat(
+      2,
+      min-content
+    );
   grid-template-columns:
     [full-start] minmax(6rem, 1fr) [center-start] repeat(
       8,
@@ -82,6 +85,6 @@ body {
     )
     [center-end] minmax(6rem, 1fr) [full-end];
   @media only screen and (max-width: $breakpoint-2) {
-    grid-template-rows: calc(90vh - 7rem);
+    grid-template-rows: 7rem calc(90vh - 7rem);
   }
 }
