@@ -57,7 +57,7 @@
     grid-template-rows: auto;
     grid-template-columns: auto;
     justify-items: center;
-    grid-row: 4/5;
+    grid-row: 5/6;
   }
 }
 .section-description {
@@ -73,7 +73,7 @@
     grid-column: full-start/full-end;
   }
   @media only screen and(max-width:$breakpoint-2) {
-    grid-row: 3/4;
+    grid-row: 4/5;
     justify-items: center;
   }
 }
